@@ -1,0 +1,59 @@
+NAME
+    RTx::EmailCompletion - Add auto completion to RT email field
+
+VERSION
+    This document describes version 0.01 of RTx::EmailCompletion.
+
+DESCRIPTION
+    I'm so tired to type email address by hand that I've done this module to
+    add AJAX autocompletion on all email field of RT
+
+    There's 3 things :
+
+    *   a small web service "html/Ajax/EmailCompletion" which search in all
+        known users in the database ;
+
+    *   prototype library to manipulate DOM and scriptaculous library to
+        autocomplete ;
+
+    *   a small javascript which parse html pages and add autocomplete on
+        known input tags.
+
+INSTALLATION
+    Install it like a standard perl module :
+
+     RTHOME=/opt/rt3 perl Makefile.PL
+     make
+     make install
+
+HOW TO ADD FIELD TO AUTOCOMPLETION
+    If you find email field without autocomplete, you can modify
+    "html/NoAuth/js/emailcompletion.js" to handle this field (and email me
+    to patch this module).
+
+    At the beginning of this file you will find two global vars
+    "multipleCompletion" and "singleCompletion". They are array of regexp.
+
+    Regexp must match all the word because "^" and "$" are added for
+    matching. So if you want to match "Field1" and "Field2" you must add
+    something like "Field." or better "Field[12]".
+
+HISTORY
+    The first version (unreleased) modify html pages. The better method
+    actually used allow this module to be compatible with, virtually, all RT
+    release.
+
+AUTHORS
+    Nicolas Chuche <nchuche@barna.be>
+
+COPYRIGHT
+    Copyright 2007 by Nicolas Chuche <nchuche@barna.be>
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+    See <http://www.perl.com/perl/misc/Artistic.html>
+
+    All Scriptaculous and Prototype program are placed under MIT licence and
+    are copyrighted by their owners (see top of files).
+
