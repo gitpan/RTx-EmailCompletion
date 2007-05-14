@@ -1,0 +1,217 @@
+----------------------------------------------------------------------
+r14448:  nc | 2007-05-15 00:36:49 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+change release number, add doc
+----------------------------------------------------------------------
+r14447:  nc | 2007-05-15 00:35:21 +0200
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/inc
+
+remove inc from subversion
+----------------------------------------------------------------------
+r14312:  nc | 2007-05-08 13:48:17 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+add predist
+----------------------------------------------------------------------
+r14217:  nc | 2007-04-28 02:29:57 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+
+comment debug option
+----------------------------------------------------------------------
+r14216:  nc | 2007-04-28 02:16:58 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/TODO
+  D  /local/rt/RTx-EmailCompletion/trunk/html/Ajax
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/SelfService
+  A  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion (from /local/rt/RTx-EmailCompletion/trunk/html/Ajax/EmailCompletion:13864)
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+allow completion for unprivileged users with some conditions
+----------------------------------------------------------------------
+r14215:  nc | 2007-04-28 02:07:50 +0200
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/t/01pod.t
+
+add a pod test
+----------------------------------------------------------------------
+r14214:  nc | 2007-04-28 01:59:34 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+
+clean the code
+----------------------------------------------------------------------
+r14213:  nc | 2007-04-27 23:32:52 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/emailcompletion.css
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+
+add debugging tools
+----------------------------------------------------------------------
+r13866:  nc | 2007-04-09 17:19:26 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+
+fixme...
+----------------------------------------------------------------------
+r13865:  nc | 2007-04-09 17:14:11 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/META.yml
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+more comments
+----------------------------------------------------------------------
+r13864:  nc | 2007-04-09 17:10:16 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/MANIFEST.SKIP
+  M  /local/rt/RTx-EmailCompletion/trunk/html/Ajax/EmailCompletion
+
+more comments
+----------------------------------------------------------------------
+r13863:  nc | 2007-04-09 16:59:52 +0200
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/MANIFEST
+  D  /local/rt/RTx-EmailCompletion/trunk/po
+
+delete useless files from svk
+----------------------------------------------------------------------
+r13862:  nc | 2007-04-09 16:59:01 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements/Header/Head
+
+change css file name
+----------------------------------------------------------------------
+r13861:  nc | 2007-04-09 16:58:35 +0200
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/Makefile
+
+not needed in svk...
+----------------------------------------------------------------------
+r13860:  nc | 2007-04-09 16:57:39 +0200
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/README
+
+delete README. Extract it from pod
+----------------------------------------------------------------------
+r13859:  nc | 2007-04-09 16:56:49 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+add doc
+----------------------------------------------------------------------
+r13858:  nc | 2007-04-09 16:56:34 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/emailcompletion.css
+
+typo in class, add background color to ul and delete beginning spaces
+----------------------------------------------------------------------
+r13857:  nc | 2007-04-09 16:51:53 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+
+change name of Regexp and the name of the webservice. Delete old no longer used function. Add comment
+----------------------------------------------------------------------
+r13856:  nc | 2007-04-09 15:41:08 +0200
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/TODO
+  D  /local/rt/RTx-EmailCompletion/trunk/html/Ajax/Email
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ajax/EmailCompletion (from /local/rt/RTx-EmailCompletion/trunk/html/Ajax/Email:13855)
+  M  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements/Header/Head
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/completion.css
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/emailcompletion.css (from /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/completion.css:13854)
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/Search
+  D  /local/rt/RTx-EmailCompletion/trunk/html/Ticket
+  D  /local/rt/RTx-EmailCompletion/trunk/patches
+
+no longer modify page to add autocomplete, use javascript instead : far better
+----------------------------------------------------------------------
+r13855:  nc | 2007-04-09 15:34:43 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/Ajax/Email
+
+delete debug print
+----------------------------------------------------------------------
+r13854:  nc | 2007-04-09 15:31:33 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/completion.css
+
+typo
+----------------------------------------------------------------------
+r13853:  nc | 2007-04-09 03:06:39 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/META.yml
+  M  /local/rt/RTx-EmailCompletion/trunk/README
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+add doc and typo
+----------------------------------------------------------------------
+r13852:  nc | 2007-04-09 02:55:55 +0200
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/MANIFEST
+  A  /local/rt/RTx-EmailCompletion/trunk/MANIFEST.SKIP
+  A  /local/rt/RTx-EmailCompletion/trunk/META.yml
+  A  /local/rt/RTx-EmailCompletion/trunk/Makefile
+  A  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+  A  /local/rt/RTx-EmailCompletion/trunk/README
+  A  /local/rt/RTx-EmailCompletion/trunk/html
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ajax
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ajax/Email
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements/Header
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements/Header/Head
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/completion.css
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/builder.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/controls.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/dragdrop.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/effects.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/prototype.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/scriptaculous.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/slider.js
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Search
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Search/Bulk.html
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ticket
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ticket/Create.html
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ticket/Elements
+  A  /local/rt/RTx-EmailCompletion/trunk/html/Ticket/Elements/AddWatchers
+  A  /local/rt/RTx-EmailCompletion/trunk/inc
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Base.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Can.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Fetch.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Makefile.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Metadata.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/RTx.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/Win32.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/inc/Module/Install/WriteAll.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/lib
+  A  /local/rt/RTx-EmailCompletion/trunk/lib/RTx
+  A  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/patches
+  A  /local/rt/RTx-EmailCompletion/trunk/patches/AddWatchers.diff
+  A  /local/rt/RTx-EmailCompletion/trunk/patches/Bulk.html.dif
+  A  /local/rt/RTx-EmailCompletion/trunk/patches/Creates.html.diff
+  A  /local/rt/RTx-EmailCompletion/trunk/po
+  A  /local/rt/RTx-EmailCompletion/trunk/t
+
+1st import
+----------------------------------------------------------------------
+r13851:  nc | 2007-04-09 02:55:46 +0200
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk
+
+Directory for svk import.
+----------------------------------------------------------------------
