@@ -3,6 +3,26 @@
 
 <%INIT>
 $RT::EmailCompletionNonPrivileged ||= '';
+$RT::EmailCompletionSearchFields  ||= [qw(EmailAddress)];
+$RT::EmailCompletionSearch        ||= 'LIKE';
+
+$RT::EmailCompletionLdapServer     ||= $RT::LdapServer;
+
+if ($RT::EmailCompletionLdapServer eq $RT::LdapServer) {
+    $RT::EmailCompletionLdapUser       ||= $RT::LdapUser;
+    $RT::EmailCompletionLdapPass       ||= $RT::LdapPass;
+}
+
+$RT::EmailCompletionLdapBase       ||= $RT::LdapBase;
+$RT::EmailCompletionLdapFilter     ||= $RT::LdapFilter;
+$RT::EmailCompletionLdapAttrShow   ||= "mail";
+$RT::EmailCompletionLdapAttrSearch ||= [qw/mail/];
+
+$RT::EmailCompletionLdapMinLength     ||= 4;
+
+# for the moment we can only show one attribute
+# but later perhaps we could add some other fields (address, ...)
+$RT::EmailCompletionLdapAttrShow = $RT::EmailCompletionLdapAttrShow->[0] if ref($RT::EmailCompletionLdapAttrShow) eq "ARRAY";
 
 my $CurrentUser = $session{CurrentUser};
 
@@ -18,41 +38,22 @@ for (keys %ARGS) {
      if defined $ARGS{$_};
 }
 
-my $Users = RT::Users->new($CurrentUser);
-$Users->Limit(FIELD => 'EmailAddress', OPERATOR => 'LIKE', VALUE => "\%$Email%");
+my ($emails, $ldaps) = RTx::EmailCompletion::search($Email, $CurrentUser);
 
 my $users = qq{<ul class="contacts">};
-
-while (my $User = $Users->Next()) {
-    next if $User->id == $RT::Nobody->id;
-
-    # some cleaning on emailaddress
-    next if $User->EmailAddress !~ m{[a-zA-Z0-9_.-]+@[^.]+\.[^.]};
-    next if $User->EmailAddress =~ m{[,?!/;\\]};
-
-    # if you're privileged user you can see anybody
-    #
-    # if you're not by default you can see nobody 
-    # if RT::EmailCompletionUnprivileged is set to anybody you can see anybody
-    # else you can see only privileged users
-
-    if ( $CurrentUser->Privileged() or $RT::EmailCompletionUnprivileged eq 'everybody' ) {
-	# Ok, show everybody
-    } elsif ( $RT::EmailCompletionUnprivileged eq 'privileged' ) {
-	next unless $User->Privileged();	
-    } elsif ( ref($RT::EmailCompletionUnprivileged) eq 'Regexp' ) {
-	next unless $User->EmailAddress =~ m/$RT::EmailCompletionUnprivileged/;
-    } else {
-	next
-    }
-
-    my $email = $User->EmailAddress;
+for my $email (@$emails) {
     $users .= qq{<li class="contact"><div class="email">$email</div></li>};
 }
-
+for my $email (@$ldaps) {
+    $users .= qq{<li class="contact ldap"><div class="email">$email</div></li>};
+}
 $users .= '</ul>';
 
 $m->out($users);
 $m->abort;
 
 </%INIT>
+
+<%ONCE>
+use RTx::EmailCompletion;
+</%ONCE>

@@ -1,4 +1,165 @@
 ----------------------------------------------------------------------
+r15197:  nc | 2007-11-15 12:21:57 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/TODO
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+last doc before release, new items in TODO
+----------------------------------------------------------------------
+r15188:  nc | 2007-11-12 23:33:40 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion/Ldap.pm
+
+error in LDAP bind
+----------------------------------------------------------------------
+r15187:  nc | 2007-11-12 22:34:05 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/emailcompletion.css
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+
+change the css/background color and fallback to LdapUser only if EmailCompletionLdapServer eq LdapServer
+----------------------------------------------------------------------
+r15186:  nc | 2007-11-12 22:03:46 +0100
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/CHANGES
+
+add CHANGES to repository
+----------------------------------------------------------------------
+r15185:  nc | 2007-11-12 22:01:57 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+forgot DEBUG constant
+----------------------------------------------------------------------
+r15184:  nc | 2007-11-12 22:01:37 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/css/emailcompletion.css
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+show LDAP emails with different background color
+----------------------------------------------------------------------
+r15183:  nc | 2007-11-12 21:16:07 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion/Ldap.pm
+
+sort ldap emails
+----------------------------------------------------------------------
+r15182:  nc | 2007-11-12 21:15:08 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion/Ldap.pm
+
+add ldap authentication
+----------------------------------------------------------------------
+r15181:  nc | 2007-11-11 19:45:53 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+default LDAP mail attribute changed to mail
+----------------------------------------------------------------------
+r15180:  nc | 2007-11-11 19:37:33 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/MANIFEST.SKIP
+  M  /local/rt/RTx-EmailCompletion/trunk/TODO
+
+update
+----------------------------------------------------------------------
+r15179:  nc | 2007-11-11 19:37:11 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+optimisation in unprivileged criteria matching loop
+----------------------------------------------------------------------
+r15178:  nc | 2007-11-11 19:36:33 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion/Ldap.pm
+
+no need for the 'o'
+----------------------------------------------------------------------
+r15177:  nc | 2007-11-11 19:33:05 +0100
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/extra
+  A  /local/rt/RTx-EmailCompletion/trunk/extra/bench_search_rdbms.pl
+
+add benchmark script
+----------------------------------------------------------------------
+r15176:  nc | 2007-11-11 17:47:36 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/TODO
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  A  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion/Ldap.pm
+
+add LDAP autocompletion
+----------------------------------------------------------------------
+r15175:  nc | 2007-11-11 15:57:02 +0100
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/Build.PL
+
+add Build.PL
+----------------------------------------------------------------------
+r15174:  nc | 2007-11-11 15:54:02 +0100
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/META.yml
+
+remove META from repitory
+----------------------------------------------------------------------
+r15173:  nc | 2007-11-10 15:07:13 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+bug : use EmailCompletionSearch in search
+----------------------------------------------------------------------
+r15172:  nc | 2007-11-10 15:05:58 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+add meta
+----------------------------------------------------------------------
+r15171:  nc | 2007-11-10 14:54:36 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+export logic search in module
+----------------------------------------------------------------------
+r15170:  nc | 2007-11-10 13:03:48 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+search on other field than email
+----------------------------------------------------------------------
+r14467:  nc | 2007-05-16 22:35:53 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+allow admin to choose operator used to find email : LIKE, STARTSWITH or ENDSWITH
+----------------------------------------------------------------------
+r14466:  nc | 2007-05-16 22:33:45 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+doc modification
+----------------------------------------------------------------------
+r14465:  nc | 2007-05-16 22:33:12 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+change version number
+----------------------------------------------------------------------
+r14460:  nc | 2007-05-15 00:57:54 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+disable sign
+----------------------------------------------------------------------
 r14448:  nc | 2007-05-15 00:36:49 +0200
 Changed paths:
   M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm

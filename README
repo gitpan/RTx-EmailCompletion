@@ -2,7 +2,7 @@ NAME
     RTx::EmailCompletion - Add auto completion on RT email fields
 
 VERSION
-    This document describes version 0.02 of RTx::EmailCompletion.
+    This document describes version 0.03 of RTx::EmailCompletion.
 
 DESCRIPTION
     I'm so tired to type email address by hand that I've done this module to
@@ -10,7 +10,7 @@ DESCRIPTION
     is dynamic, it should work on most RT releases (see later if it's not
     the case).
 
-    There's 3 things :
+    There's 4 things :
 
     *   a small web service `html/Ajax/EmailCompletion' which search in all
         known users in the database ;
@@ -20,6 +20,8 @@ DESCRIPTION
 
     *   a small javascript which parse html pages and add autocomplete on
         known input tags.
+
+    *   a perl module to handle all the logic
 
 INSTALLATION
     if upgrading from 0.01, see later UPGRADE FROM 0.01.
@@ -31,6 +33,12 @@ INSTALLATION
      make install
 
 CONFIGURATION
+    This section is fairly long but you don't really need to read it if you
+    just want the basic : autocompletion only for privileged users against
+    all registred users of RT database.
+
+  unprivileged users autocompletion
+
     By default, completion works only for privileged users.
 
     You can activate it for unprivileged users (in the SelfService) by
@@ -40,11 +48,117 @@ CONFIGURATION
     * show everybody
           Set($EmailCompletionUnprivileged,"everybody");
 
+        Be careful, this will also show all yours LDAP users.
+
     * show only privileged users
           Set($EmailCompletionUnprivileged,"privileged");
 
+        This won't show LDAP users
+
     * show only email matching a regexp
           Set($EmailCompletionUnprivileged, qr/\@my\.corp\.domain$/ );
+
+        This will also show LDAP user mails that matchs the regexp
+
+  change the database clause to search email
+
+    You can also change the operator used in the `where' clause to search
+    email with the global var $RT::EmailCompletionSearch. The default one is
+    `LIKE'.
+
+    To change it, add a line like this in RTHOME/etc/RT_SiteConfig.pm :
+
+     Set($EmailCompletionSearch, "STARTSWITH");
+
+    This variable can take the values `LIKE', `STARTSWITH' and `ENDSWITH'.
+
+    By default, the plugin searches on Users.EmailAddress.
+
+    You can change where it searches by setting $EmailCompletionSearchFields
+    in RTHOME/etc/RT_SiteConfig.pm to an arrayref of fields from the Users
+    table.
+
+       Set( $EmailCompletionSearchFields, [qw(EmailAddress RealName Name)] );
+
+    This would allow you to search by usernames, full names and email
+    addresses
+
+  LDAP configuration
+
+    Starting with RTx::EmailCompletion 0.03, autocompletion works with LDAP
+    servers.
+
+    If you already have installed and configured LDAP authentication
+    overlay, this configuration will be used and it should/could work just
+    as it is.
+
+    The following configuration parameters applied :
+
+    * EmailCompletionLdapServer : the ldap server (mandatory)
+          Set($EmailCompletionLdapServer, "my.ldap.server");
+
+        If not set, RTx::EmailCompletion will search for LdapServer
+        parameter (configured for the LDAP RT authentification layout and
+        some others LDAP RT extensions).
+
+    * EmailCompletionLdapBase : the ldap base (mandatory)
+          Set($EmailCompletionLdapBase, "dc=debian,dc=org");
+
+        If not set, RTx::EmailCompletion will search for LdapBase parameter
+        (configured for the LDAP RT authentification layout and some others
+        LDAP RT extensions).
+
+    * EmailCompletionLdapUser : the ldap user if you need authentication
+          Set($EmailCompletionLdapUser, "myldapuser");
+
+        If not set, RTx::EmailCompletion will search for LdapUser parameter
+        (configured for the LDAP RT authentification layout and some others
+        LDAP RT extensions).
+
+    * EmailCompletionLdapPass : the ldap password if you need authentication
+          Set($EmailCompletionLdapPass, "mypassword");
+
+        If not set, RTx::EmailCompletion will search for LdapPass parameter
+        (configured for the LDAP RT authentification layout and some others
+        LDAP RT extensions).
+
+    * EmailCompletionLdapFilter : the ldap filter if needed
+          Set($EmailCompletionLdapFilter, "(objectclass=person)");
+
+        If not set, RTx::EmailCompletion will search for LdapFilter
+        parameter (configured for the LDAP RT authentification layout).
+
+    * EmailCompletionLdapAttrSearch : the ldap search attributes
+          Set($EmailCompletionLdapAttrSearch, [qw/mail cn/]);
+
+        Default value is mail.
+
+    * EmailCompletionLdapAttrShow : the mail attribute name
+          Set($EmailCompletionLdapAttrShow, "mail");
+
+        Default value is mail
+
+    * EmailCompletionLdapMinLength : minimum parameter length to send an
+    ldap request
+          Set(EmailCompletionLdapMinLength, 6);
+
+        Default value is 4
+
+    The minimum LDAP configuration look somethink like this :
+
+      Set($EmailCompletionLdapServer, "db.debian.org");
+      Set($EmailCompletionLdapBase, "dc=debian,dc=org");
+
+    You can disable ldap completion (useful if you have installed ldap
+    authentication overlay and you don't want ldap completion) with :
+
+      Set($EmailCompletionLdapDisabled, 1);
+
+    If you want to keep only LDAP completion, you can also disable RDBMS :
+
+      Set($EmailCompletionRdbmsDisabled, 1);
+
+    The given value must be true for perl.
 
 HOW TO ADD FIELD TO AUTOCOMPLETION
     If you find email field without autocomplete, you can modify
@@ -58,8 +172,8 @@ HOW TO ADD FIELD TO AUTOCOMPLETION
     matching. So if you want to match `Field1' and `Field2' you must add
     something like `Field.' or better `Field[12]'.
 
-    To verify javascript find your input tag, you can uncomment the line
-    just after the "DEBUGGING PURPOSE" one. All input tags find by the
+    To verify that javascript find your input tag, you can uncomment the
+    line just after the "DEBUGGING PURPOSE" one. All input tags find by the
     script will appear with a big red border.
 
 UPGRADE FROM 0.01
@@ -69,8 +183,9 @@ UPGRADE FROM 0.01
       RTHOME/local/html/Ajax/EmailCompletion
       RTHOME/local/html/NoAuth/js/emailcompletion.js
       RTHOME/local/html/NoAuth/js/
+      RTHOME/local/html/NoAuth/css/emailcompletion.css
 
-    Be careful of you have other javascripts in RTHOME/local/html/NoAuth/js/
+    Be careful if you have other javascripts in RTHOME/local/html/NoAuth/js/
 
 HISTORY
     The first version (unreleased) modify html pages. The better method
