@@ -1,4 +1,46 @@
 ----------------------------------------------------------------------
+r18486:  nc | 2008-08-26 22:56:50 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/CHANGES
+
+add new changes for 0.04
+----------------------------------------------------------------------
+r18485:  nc | 2008-08-26 22:53:41 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+new VERSION and add a comment on scriptaculous and earlier version
+----------------------------------------------------------------------
+r18484:  nc | 2008-08-26 22:43:12 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+deploy scriptaculous only for RT before 3.8
+----------------------------------------------------------------------
+r18483:  nc | 2008-08-26 22:28:16 +0200
+Changed paths:
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/builder.js
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/controls.js
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/dragdrop.js
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/effects.js
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/scriptaculous.js
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/slider.js
+
+add new scriptaculous
+----------------------------------------------------------------------
+r18482:  nc | 2008-08-26 22:21:08 +0200
+Changed paths:
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/builder.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/controls.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/dragdrop.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/effects.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/prototype.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/scriptaculous.js
+  D  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/slider.js
+
+delete old scriptaculous
+----------------------------------------------------------------------
 r15197:  nc | 2007-11-15 12:21:57 +0100
 Changed paths:
   M  /local/rt/RTx-EmailCompletion/trunk/TODO
