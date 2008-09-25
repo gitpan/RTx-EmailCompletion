@@ -1,4 +1,18 @@
 ----------------------------------------------------------------------
+r18666:  nc | 2008-09-25 21:12:25 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/CHANGES
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+  A  /local/rt/RTx-EmailCompletion/trunk/scriptaculous/prototype.js
+
+bugfix for RT < 3.8
+----------------------------------------------------------------------
+r18665:  nc | 2008-09-25 21:11:33 +0200
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/CHANGES
+
+change CHANGES
+----------------------------------------------------------------------
 r18486:  nc | 2008-08-26 22:56:50 +0200
 Changed paths:
   M  /local/rt/RTx-EmailCompletion/trunk/CHANGES

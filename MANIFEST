@@ -16,7 +16,7 @@ inc/Module/Install/WriteAll.pm
 lib/RTx/EmailCompletion.pm
 lib/RTx/EmailCompletion/Ldap.pm
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST       This list of files
 META.yml
 README
 t/01pod.t
@@ -27,3 +27,4 @@ scriptaculous/scriptaculous.js
 scriptaculous/effects.js
 scriptaculous/slider.js
 scriptaculous/controls.js
+scriptaculous/prototype.js

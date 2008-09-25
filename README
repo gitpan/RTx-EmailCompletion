@@ -2,7 +2,7 @@ NAME
     RTx::EmailCompletion - Add auto completion on RT email fields
 
 VERSION
-    This document describes version 0.04 of RTx::EmailCompletion.
+    This document describes version 0.05 of RTx::EmailCompletion.
 
 DESCRIPTION
     I'm so tired to type email address by hand that I've done this module to
