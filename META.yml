@@ -1,16 +1,19 @@
---- 
-abstract: autompletion on mail
-author: Nicolas Chuche <nchuche@barna.be>
+---
+abstract: 'autocompletion on mail'
+author:
+  - 'Nicolas Chuche <nchuche@barna.be>'
 distribution_type: module
-generated_by: Module::Install version 0.65
+generated_by: 'Module::Install version 0.79'
 license: perl
-meta-spec: 
-  url: http://module-build.sourceforge.net/META-spec-v1.3.html
-  version: 1.3
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
 name: RTx-EmailCompletion
-no_index: 
-  directory: 
+no_index:
+  directory:
     - html
     - inc
     - t
-version: 0.05
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.06

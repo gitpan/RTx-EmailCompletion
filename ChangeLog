@@ -1,4 +1,30 @@
 ----------------------------------------------------------------------
+r19452:  nc | 2009-03-13 14:30:29 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+typo
+----------------------------------------------------------------------
+r19451:  nc | 2009-03-13 14:26:19 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+
+minor change
+----------------------------------------------------------------------
+r19450:  nc | 2009-03-13 14:17:26 +0100
+Changed paths:
+  M  /local/rt/RTx-EmailCompletion/trunk/CHANGES
+  M  /local/rt/RTx-EmailCompletion/trunk/Makefile.PL
+  M  /local/rt/RTx-EmailCompletion/trunk/html/Callbacks/RTx-EmailCompletion/Elements/Header/Head
+  M  /local/rt/RTx-EmailCompletion/trunk/html/NoAuth/js/emailcompletion.js
+  M  /local/rt/RTx-EmailCompletion/trunk/html/SelfService/Ajax/EmailCompletion
+  M  /local/rt/RTx-EmailCompletion/trunk/lib/RTx/EmailCompletion.pm
+
+* add autocompletion in the new "forward a message" page
+* change RTx name
+* small bugfixes and docfixes
+
+----------------------------------------------------------------------
 r18666:  nc | 2008-09-25 21:12:25 +0200
 Changed paths:
   M  /local/rt/RTx-EmailCompletion/trunk/CHANGES

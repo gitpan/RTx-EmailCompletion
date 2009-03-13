@@ -1,8 +1,8 @@
 use inc::Module::Install;
 
-RTx('EmailCompletion');
+RTx('RTx-EmailCompletion');
 author('Nicolas Chuche <nchuche@barna.be>');
-abstract('autompletion on mail');
+abstract('autocompletion on mail');
 license('perl');
 WriteAll( meta => 1 );
 
@@ -18,10 +18,14 @@ use File::Copy;
 
 if ($RT::VERSION lt "3.8") {
     for my $src (glob("scriptaculous/*.js")) {
+	print "\tcopy $src to html/NoAuth/js/\n";
 	my $dest = "html/NoAuth/js/" . basename($src);
 	copy $src => $dest;
     }
 } else {
     my @scriptaculous = grep { $_ !~ /emailcompletion/ } glob("html/NoAuth/js/*.js");
-    unlink @scriptaculous if @scriptaculous;
+    if (@scriptaculous) {
+	print "\tdelete scriptaculous lib from target";
+	unlink @scriptaculous
+    } 
 }
